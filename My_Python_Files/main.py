@@ -1,4 +1,8 @@
-modified:   My_Python_Files/main.py
+from transformers import pipeline
+sentiment_task = pipeline("sentiment-analysis", model="cardiffnlp/twitter-roberta-base-sentiment-latest", tokenizer="cardiffnlp/twitter-roberta-base-sentiment-latest")
+result = sentiment_task("Covid cases are increasing fast!")
+dict_values = list(result[0].values()) 
+print(dict_values[0])
 
 
 # from langchain_community.llms import huggingface_endpoint
